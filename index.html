@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Boris IBox — Boutique premium d'accessoires tech et lifestyle à Yaoundé. Téléphones, montres, drones, chaussures. Paiement MTN MoMo & Orange Money.">
+<meta property="og:title" content="Boris IBox — Accessoires Premium Yaoundé">
+<meta property="og:description" content="Téléphones, montres connectées, drones, sacs de marque. Livraison Yaoundé. MTN MoMo accepté.">
+<meta property="og:type" content="website">
+<title>Boris IBox — Accessoires Premium Yaoundé</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D62828;--red2:#F77F00;
+  --red-glow:rgba(214,40,40,0.18);
+  --black:#080808;--dark:#101010;--dark2:#181818;--dark3:#202020;
+  --border:rgba(255,255,255,0.07);--border-red:rgba(214,40,40,0.35);
+  --text:#F0EDE8;--muted:#888580;--muted2:#5A5755;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--black);color:var(--text);overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-thumb{background:var(--red);}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;width:100%;z-index:999;
+  height:68px;padding:0 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(8,8,8,0.95);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
+}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:4px;color:var(--text);}
+.logo em{color:var(--red);font-style:normal;}
+.nav-menu{display:flex;align-items:center;gap:36px;list-style:none;}
+.nav-menu a{
+  font-size:13px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted);
+  text-decoration:none;transition:color .25s;
+}
+.nav-menu a:hover{color:var(--text);}
+.nav-btn{
+  background:var(--red);color:var(--text)!important;
+  padding:9px 22px;border-radius:3px;
+  font-size:12px!important;font-weight:600!important;letter-spacing:1.5px;
+}
+.nav-btn:hover{background:#ff3333!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:1001;}
+.hamburger span{width:24px;height:2px;background:var(--text);transition:.3s;display:block;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* ─── HERO ─── */
+#hero{
+  min-height:100vh;padding:68px 6% 0;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:60px;
+  position:relative;overflow:hidden;
+}
+.hero-blob{
+  position:absolute;top:-20%;right:-10%;
+  width:60vw;height:60vw;
+  background:radial-gradient(circle at center,rgba(214,40,40,0.10) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero-blob2{
+  position:absolute;bottom:-10%;left:-5%;
+  width:40vw;height:40vw;
+  background:radial-gradient(circle at center,rgba(247,127,0,0.06) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
+.hero-left{position:relative;z-index:2;padding:80px 0 60px;}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(214,40,40,0.1);border:1px solid var(--border-red);
+  padding:6px 16px;border-radius:20px;
+  font-size:11px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:var(--red);margin-bottom:28px;
+}
+.hero-eyebrow::before{content:'●';font-size:7px;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.hero-h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(70px,7.5vw,108px);
+  line-height:.92;letter-spacing:1px;
+  color:var(--text);margin-bottom:30px;
+}
+.hero-h1 .line-red{color:transparent;-webkit-text-stroke:2px var(--red);}
+.hero-h1 .line-fill{color:var(--red);}
+.hero-para{
+  font-size:16px;font-weight:300;line-height:1.85;
+  color:var(--muted);max-width:440px;margin-bottom:42px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-red{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--red);color:var(--text);
+  padding:15px 32px;border:none;border-radius:3px;
+  font-size:13px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;text-decoration:none;cursor:pointer;
+  transition:background .25s,transform .2s;
+}
+.btn-red:hover{background:#ff2222;transform:translateY(-2px);}
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--text);
+  padding:15px 32px;border:1px solid var(--border);border-radius:3px;
+  font-size:13px;font-weight:500;letter-spacing:1.5px;
+  text-transform:uppercase;text-decoration:none;cursor:pointer;
+  transition:border-color .25s,transform .2s;
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.3);transform:translateY(-2px);}
+.hero-kpis{
+  display:flex;gap:40px;margin-top:52px;
+  padding-top:36px;border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.kpi-num{font-family:'Bebas Neue',sans-serif;font-size:38px;color:var(--red);line-height:1;}
+.kpi-lbl{font-size:11px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+
+/* ─── HERO CAROUSEL ─── */
+.hero-right{
+  position:relative;z-index:2;
+  height:100%;min-height:580px;
+  display:flex;align-items:center;justify-content:center;
+  padding:80px 0 60px;
+}
+.carousel-wrap{
+  position:relative;width:100%;max-width:460px;
+  user-select:none;
+}
+
+/* Slides container */
+.carousel-track{
+  position:relative;
+  border-radius:20px;overflow:hidden;
+  background:var(--dark2);
+  border:1px solid var(--border);
+  height:520px;
+}
+
+/* Chaque slide */
+.c-slide{
+  position:absolute;inset:0;
+  opacity:0;transform:scale(1.03);
+  transition:opacity .55s ease, transform .55s ease;
+  pointer-events:none;
+}
+.c-slide.active{
+  opacity:1;transform:scale(1);
+  pointer-events:auto;
+}
+.c-slide.prev{
+  opacity:0;transform:scale(0.97);
+}
+
+/* Photo pleine hauteur */
+.c-slide img{
+  width:100%;height:100%;
+  object-fit:cover;display:block;
+}
+
+/* Dégradé bas + infos produit */
+.c-slide-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(8,8,8,0.95) 0%,
+    rgba(8,8,8,0.55) 42%,
+    transparent 72%
+  );
+}
+.c-slide-info{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 28px 24px;
+}
+.c-slide-badge{
+  display:inline-block;
+  background:var(--red);
+  color:#fff;font-size:9px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  padding:4px 10px;border-radius:3px;margin-bottom:10px;
+}
+.c-slide-cat{
+  font-size:10px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(214,40,40,.85);
+  margin-bottom:5px;
+}
+.c-slide-name{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:30px;letter-spacing:2px;
+  color:#fff;line-height:1.05;margin-bottom:4px;
+}
+.c-slide-sub{font-size:13px;color:rgba(240,237,232,.6);margin-bottom:14px;}
+.c-slide-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.c-slide-price{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:36px;color:var(--red);letter-spacing:1px;
+  line-height:1;
+}
+.c-slide-price sup{
+  font-family:'Outfit',sans-serif;font-size:11px;
+  font-weight:500;vertical-align:top;margin-top:5px;display:inline-block;
+  color:rgba(214,40,40,.8);
+}
+.c-slide-btn{
+  background:var(--red);color:#fff;border:none;
+  padding:12px 20px;border-radius:6px;
+  font-size:11px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;cursor:pointer;
+  transition:background .2s,transform .2s;
+  white-space:nowrap;flex-shrink:0;
+}
+.c-slide-btn:hover{background:#ff2222;transform:translateY(-2px);}
+
+/* Barre de progression top */
+.c-progress{
+  position:absolute;top:0;left:0;right:0;
+  height:3px;z-index:10;
+  display:flex;gap:3px;padding:0 12px;
+  align-items:center;padding-top:14px;
+}
+.c-prog-bar{
+  flex:1;height:2px;border-radius:2px;
+  background:rgba(255,255,255,0.2);
+  overflow:hidden;cursor:pointer;
+}
+.c-prog-fill{
+  height:100%;width:0%;
+  background:var(--red);
+  transition:width .1s linear;
+}
+.c-prog-bar.done .c-prog-fill{width:100%;}
+.c-prog-bar.active .c-prog-fill{background:var(--red);}
+
+/* Flèches nav */
+.c-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  z-index:10;width:40px;height:40px;
+  background:rgba(8,8,8,0.7);border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;color:#fff;font-size:16px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .2s,border-color .2s,transform .2s;
+  backdrop-filter:blur(8px);
+}
+.c-arrow:hover{background:var(--red);border-color:var(--red);transform:translateY(-50%) scale(1.08);}
+.c-arrow.left{left:-18px;}
+.c-arrow.right{right:-18px;}
+
+/* Dots */
+.c-dots{
+  display:flex;justify-content:center;gap:8px;
+  margin-top:18px;
+}
+.c-dot{
+  width:6px;height:6px;border-radius:50%;
+  background:var(--muted2);cursor:pointer;
+  transition:background .25s,transform .25s;
+}
+.c-dot.on{background:var(--red);transform:scale(1.4);}
+
+/* Pause indicator */
+.c-paused-hint{
+  position:absolute;top:52px;right:14px;z-index:10;
+  font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.45);font-weight:600;
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+
+/* ─── TICKER ─── */
+.ticker-wrap{
+  background:var(--red);overflow:hidden;
+  border-top:1px solid rgba(255,255,255,0.1);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.ticker-track{display:flex;animation:scroll-left 28s linear infinite;white-space:nowrap;}
+.ticker-item{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(255,255,255,.92);
+  padding:12px 48px;border-right:1px solid rgba(255,255,255,.2);
+}
+@keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ─── PROMOS ─── */
+#promos{padding:100px 6%;background:var(--dark);}
+.section-head{margin-bottom:56px;}
+.s-tag{
+  font-size:11px;font-weight:700;letter-spacing:4px;
+  text-transform:uppercase;color:var(--red);
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.s-tag::before{content:'';width:28px;height:1px;background:var(--red);}
+.s-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(36px,5vw,64px);
+  letter-spacing:2px;line-height:.95;color:var(--text);
+}
+.s-title em{color:var(--red);font-style:normal;}
+.s-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;max-width:500px;margin-top:12px;}
+
+.promos-grid{display:grid;grid-template-columns:2fr 1fr;gap:16px;}
+.promo-big{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;position:relative;
+  display:flex;flex-direction:column;
+}
+.promo-big-img{
+  width:100%;height:220px;object-fit:cover;
+  display:block;
+}
+.promo-big-body{padding:28px 32px 32px;flex:1;display:flex;flex-direction:column;justify-content:space-between;}
+.promo-big-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
+.promo-big-title{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--text);margin-bottom:12px;}
+.promo-big-old{font-size:18px;color:var(--muted);text-decoration:line-through;font-weight:300;}
+.promo-big-new{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--red);letter-spacing:1px;}
+.promo-badge{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--red),var(--red2));
+  padding:6px 16px;border-radius:20px;
+  font-size:12px;font-weight:700;letter-spacing:1px;margin-top:14px;
+}
+.promos-small{display:flex;flex-direction:column;gap:12px;}
+.promo-small{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  display:flex;align-items:stretch;
+  position:relative;transition:border-color .25s;cursor:pointer;flex:1;
+  min-height:0;
+}
+.promo-small:hover{border-color:var(--border-red);}
+.ps-img{width:90px;height:100%;object-fit:cover;flex-shrink:0;}
+.ps-body{padding:16px;flex:1;display:flex;flex-direction:column;justify-content:center;}
+.ps-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);}
+.ps-name{font-size:15px;font-weight:600;color:var(--text);margin:4px 0;}
+.ps-prices{display:flex;align-items:center;gap:8px;}
+.ps-old{font-size:13px;color:var(--muted);text-decoration:line-through;}
+.ps-new{font-size:19px;font-weight:700;color:var(--red);}
+.ps-badge{
+  position:absolute;top:10px;right:10px;
+  background:var(--red);padding:3px 10px;
+  border-radius:4px;font-size:11px;font-weight:700;color:#fff;
+}
+
+/* ─── CATALOGUE ─── */
+#catalogue{padding:100px 6%;background:var(--black);}
+.cat-controls{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:50px;}
+.filters{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{
+  padding:9px 20px;background:transparent;
+  border:1px solid var(--border);color:var(--muted);
+  border-radius:24px;font-size:12px;font-weight:600;
+  letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;
+  transition:all .25s;white-space:nowrap;
+}
+.filter-btn:hover,.filter-btn.on{background:var(--red);border-color:var(--red);color:#fff;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+
+/* PCARD — image réelle */
+.pcard{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:12px;overflow:hidden;
+  transition:border-color .3s,transform .3s;cursor:pointer;
+}
+.pcard:hover{border-color:var(--border-red);transform:translateY(-5px);}
+.pcard-img{
+  height:220px;position:relative;overflow:hidden;
+  background:var(--dark3);
+}
+.pcard-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;display:block;
+}
+.pcard:hover .pcard-img img{transform:scale(1.06);}
+.pcard-overlay{
+  position:absolute;inset:0;
+  background:rgba(214,40,40,0.0);
+  transition:background .3s;
+}
+.pcard:hover .pcard-overlay{background:rgba(214,40,40,0.06);}
+.pcard-tag{
+  position:absolute;top:12px;left:12px;z-index:2;
+  background:var(--red);color:#fff;
+  font-size:9px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;padding:5px 10px;border-radius:3px;
+}
+.pcard-body{padding:18px 20px 20px;}
+.pcard-cat{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);margin-bottom:6px;}
+.pcard-name{font-size:16px;font-weight:600;color:var(--text);margin-bottom:12px;line-height:1.3;}
+.pcard-bottom{display:flex;justify-content:space-between;align-items:center;gap:10px;}
+.pcard-price{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--red);letter-spacing:1px;white-space:nowrap;}
+.pcard-price sup{font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;vertical-align:top;margin-top:6px;display:inline-block;}
+.btn-buy{
+  background:var(--dark3);border:1px solid var(--border);
+  color:var(--text);padding:9px 16px;border-radius:6px;
+  font-size:11px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;cursor:pointer;
+  transition:background .25s,border-color .25s;white-space:nowrap;flex-shrink:0;
+}
+.btn-buy:hover{background:var(--red);border-color:var(--red);}
+.pcard-rating{font-size:12px;color:var(--muted);margin-top:10px;}
+.pcard-rating .s{color:#F39C12;}
+
+/* ─── ABOUT ─── */
+#about{padding:100px 6%;background:var(--dark);}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-visual{position:relative;}
+.about-img{
+  width:100%;aspect-ratio:4/5;
+  border-radius:16px;overflow:hidden;
+  border:1px solid var(--border);position:relative;
+}
+.about-img img{width:100%;height:100%;object-fit:cover;display:block;}
+.about-img::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:40%;
+  background:linear-gradient(to top,rgba(214,40,40,0.18),transparent);
+  pointer-events:none;
+}
+.about-float{
+  position:absolute;bottom:-20px;right:-20px;
+  background:var(--red);border-radius:12px;
+  padding:18px 24px;text-align:center;
+  box-shadow:0 12px 40px rgba(214,40,40,0.4);
+  z-index:3;
+}
+.af-num{font-family:'Bebas Neue',sans-serif;font-size:44px;color:#fff;line-height:1;}
+.af-txt{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.8);}
+.about-line{width:60px;height:3px;background:var(--red);margin:20px 0 28px;}
+.about-text{font-size:16px;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:36px;}
+.feats{display:flex;flex-direction:column;gap:18px;}
+.feat{display:flex;align-items:flex-start;gap:18px;}
+.feat-icon{
+  width:44px;height:44px;flex-shrink:0;
+  background:rgba(214,40,40,0.1);border:1px solid var(--border-red);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.feat-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px;}
+.feat-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* ─── TESTIMONIALS ─── */
+#testi{padding:100px 6%;background:var(--black);}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px;}
+.tcard{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:12px;padding:28px;
+  transition:border-color .3s;position:relative;
+}
+.tcard:hover{border-color:var(--border-red);}
+.tcard::before{
+  content:'"';position:absolute;top:16px;right:24px;
+  font-family:'Bebas Neue',sans-serif;font-size:80px;
+  color:rgba(214,40,40,0.10);line-height:1;
+}
+.tcard-stars{color:#F39C12;font-size:14px;letter-spacing:2px;margin-bottom:14px;}
+.tcard-text{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:22px;}
+.tcard-author{display:flex;align-items:center;gap:14px;}
+.tcard-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--red);display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;color:#fff;flex-shrink:0;letter-spacing:1px;
+}
+.tcard-name{font-size:14px;font-weight:600;color:var(--text);}
+.tcard-loc{font-size:12px;color:var(--muted);}
+
+/* ─── CONTACT ─── */
+#contact{padding:100px 6%;background:var(--dark);}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+.cinfo{display:flex;flex-direction:column;gap:24px;margin-top:10px;}
+.ci{display:flex;gap:18px;align-items:flex-start;}
+.ci-icon{
+  width:48px;height:48px;flex-shrink:0;
+  background:rgba(214,40,40,0.1);border:1px solid var(--border-red);
+  border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;
+}
+.ci-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.ci-val{font-size:15px;font-weight:500;color:var(--text);}
+.wa-btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:#25D366;color:#fff;
+  padding:16px 28px;border-radius:6px;border:none;
+  font-size:13px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;text-decoration:none;cursor:pointer;
+  transition:background .25s,transform .2s;margin-top:8px;
+  width:100%;justify-content:center;
+}
+.wa-btn:hover{background:#20bf5b;transform:translateY(-2px);}
+.cform{
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:16px;padding:36px;
+  display:flex;flex-direction:column;gap:18px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fg{display:flex;flex-direction:column;gap:8px;}
+.flabel{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+.finput,.ftextarea{
+  background:var(--dark3);border:1px solid var(--border);
+  color:var(--text);padding:13px 16px;
+  font-size:15px;font-family:'Outfit',sans-serif;
+  border-radius:6px;outline:none;transition:border-color .25s;
+}
+.finput:focus,.ftextarea:focus{border-color:var(--red);}
+.finput::placeholder,.ftextarea::placeholder{color:var(--muted2);}
+.ftextarea{resize:vertical;min-height:110px;}
+.fsend{
+  background:var(--red);color:#fff;border:none;
+  border-radius:6px;padding:16px;
+  font-size:13px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;cursor:pointer;
+  transition:background .25s,transform .2s;
+}
+.fsend:hover{background:#ff2222;transform:translateY(-2px);}
+
+/* ─── FOOTER ─── */
+footer{
+  background:var(--black);border-top:1px solid var(--border);
+  padding:70px 6% 30px;
+}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;margin-bottom:50px;}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:4px;color:var(--text);margin-bottom:14px;}
+.flogo em{color:var(--red);font-style:normal;}
+.fdesc{font-size:14px;font-weight:300;color:var(--muted);line-height:1.8;margin-bottom:22px;}
+.socials{display:flex;gap:10px;}
+.soc{
+  width:36px;height:36px;
+  background:var(--dark2);border:1px solid var(--border);
+  border-radius:6px;display:flex;align-items:center;justify-content:center;
+  font-size:16px;cursor:pointer;transition:border-color .25s,background .25s;
+  text-decoration:none;
+}
+.soc:hover{border-color:var(--red);background:rgba(214,40,40,0.1);}
+.fcol-title{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text);margin-bottom:20px;}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.flinks a{font-size:14px;color:var(--muted);text-decoration:none;transition:color .25s;}
+.flinks a:hover{color:var(--red);}
+.footer-bot{
+  border-top:1px solid var(--border);padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+}
+.copy{font-size:13px;color:var(--muted2);}
+.copy em{color:var(--red);font-style:normal;}
+.back-top{
+  position:fixed;bottom:28px;right:28px;z-index:888;
+  width:44px;height:44px;background:var(--red);
+  border:none;border-radius:6px;color:#fff;font-size:18px;
+  cursor:pointer;opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .3s;
+}
+.back-top.show{opacity:1;pointer-events:auto;}
+.back-top:hover{transform:translateY(-3px);}
+
+/* ─── REVEAL ─── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.in{opacity:1;transform:none;}
+
+/* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
+
+/* TABLETTE PAYSAGE — max 1024px */
+@media(max-width:1024px){
+  .nav-menu{
+    display:none;position:fixed;top:68px;left:0;right:0;
+    background:rgba(8,8,8,0.98);backdrop-filter:blur(20px);
+    flex-direction:column;gap:0;padding:12px 0 20px;
+    border-bottom:1px solid var(--border);z-index:998;
+  }
+  .nav-menu.open{display:flex;}
+  .nav-menu li{width:100%;}
+  .nav-menu a{display:block;padding:13px 6%;font-size:15px;border-bottom:1px solid var(--border);}
+  .nav-menu a.nav-btn{margin:14px 6% 0;text-align:center;border-radius:4px;border-bottom:none;}
+  .hamburger{display:flex;}
+
+  /* HERO — 1 colonne, carousel en dessous */
+  #hero{grid-template-columns:1fr;padding-top:100px;padding-bottom:60px;min-height:auto;gap:40px;}
+  .hero-right{min-height:auto;padding:0;}
+  .carousel-wrap{max-width:100%;}
+  .carousel-track{height:420px;}
+  .c-arrow.left{left:-12px;}
+  .c-arrow.right{right:-12px;}
+  .hero-left{padding:20px 0 0;}
+  .hero-para{max-width:100%;}
+  .hero-kpis{
+    display:grid;grid-template-columns:1fr 1fr;
+    row-gap:20px;column-gap:0;padding-top:28px;margin-top:36px;
+  }
+
+  .promos-grid{grid-template-columns:1fr;}
+  .promos-small{flex-direction:column;gap:12px;}
+  .promo-small{flex:none;width:100%;}
+
+  .about-wrap{grid-template-columns:1fr;gap:50px;}
+  .about-visual{max-width:420px;margin:0 auto;}
+  .about-img{aspect-ratio:16/9;}
+  /* about-float en bas à droite, limité par le parent */
+  .about-float{bottom:-16px;right:-16px;}
+
+  .contact-wrap{grid-template-columns:1fr;gap:50px;}
+  .testi-grid{grid-template-columns:1fr;}
+  .footer-top{grid-template-columns:1fr 1fr;gap:36px;}
+  .section-head{margin-bottom:36px;}
+}
+
+/* TABLETTE PORTRAIT — max 768px */
+@media(max-width:768px){
+  section,#promos,#catalogue,#about,#testi,#contact{padding:64px 5%;}
+  footer{padding:48px 5% 24px;}
+
+  .hero-h1{font-size:62px;}
+  .hero-para{font-size:15px;}
+  .carousel-track{height:360px;}
+  .c-slide-name{font-size:26px;}
+  .c-slide-price{font-size:30px;}
+  .hero-kpis{row-gap:18px;}
+  .kpi-num{font-size:28px;}
+  .hero-actions{flex-direction:column;gap:12px;}
+  .btn-red,.btn-ghost{width:100%;text-align:center;justify-content:center;padding:16px 24px;}
+
+  .promo-big-img{height:180px;}
+  .promo-big-body{padding:22px 24px 24px;}
+  .promo-big-title{font-size:30px;}
+  .promo-big-new{font-size:36px;}
+
+  .cat-controls{flex-direction:column;align-items:flex-start;gap:16px;}
+  .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;width:100%;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .filters::-webkit-scrollbar{display:none;}
+
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .pcard-img{height:170px;}
+  /* pcard-bottom en colonne pour éviter compression sur 2 col */
+  .pcard-bottom{flex-direction:column;align-items:flex-start;gap:8px;}
+  .btn-buy{width:100%;text-align:center;padding:10px;}
+  .pcard-name{font-size:14px;}
+  .pcard-price{font-size:24px;}
+
+  .form-row{grid-template-columns:1fr;}
+  .cform{padding:22px;}
+  .footer-top{grid-template-columns:1fr;}
+  .footer-bot{flex-direction:column;text-align:center;gap:8px;}
+  .testi-grid{margin-top:36px;}
+}
+
+/* MOBILE — max 480px */
+@media(max-width:480px){
+  section,#promos,#catalogue,#about,#testi,#contact{padding:52px 4%;}
+  footer{padding:40px 4% 20px;}
+  nav{padding:0 4%;}
+
+  .hero-h1{font-size:50px;line-height:.93;}
+  .carousel-track{height:300px;}
+  .c-slide-name{font-size:22px;}
+  .c-slide-info{padding:20px 18px 18px;}
+  .c-slide-price{font-size:26px;}
+  .hero-eyebrow{font-size:10px;padding:5px 12px;letter-spacing:2px;}
+  .hero-para{font-size:14px;}
+  .hero-kpis{grid-template-columns:1fr 1fr;row-gap:14px;}
+  .kpi-num{font-size:22px;}
+  .kpi-lbl{font-size:9px;letter-spacing:1px;}
+
+  .s-title{font-size:34px;letter-spacing:1px;}
+  .section-head{margin-bottom:28px;}
+
+  .promo-big-img{height:150px;}
+  .promo-big-body{padding:18px 20px 20px;}
+  .promo-big-title{font-size:26px;}
+  .promo-big-new{font-size:32px;}
+  .promo-small{min-height:80px;}
+  .ps-img{width:80px;}
+  .ps-name{font-size:13px;}
+  .ps-new{font-size:16px;}
+
+  /* 1 colonne sur mobile */
+  .grid{grid-template-columns:1fr;}
+  .pcard-img{height:200px;}
+  .pcard-bottom{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px;}
+  .btn-buy{width:auto;flex:1;min-width:100px;}
+  .pcard-price{font-size:26px;}
+
+  /* about-float repositionné pour ne pas déborder */
+  .about-img{aspect-ratio:4/3;}
+  .about-float{
+    position:relative;bottom:auto;right:auto;
+    display:inline-flex;align-items:center;gap:12px;
+    border-radius:10px;padding:14px 20px;
+    margin-top:14px;text-align:left;
+    box-shadow:0 8px 24px rgba(214,40,40,0.35);
+  }
+  .af-num{font-size:32px;}
+
+  .ci-icon{width:40px;height:40px;font-size:16px;}
+  .ci-val{font-size:14px;}
+  .cform{padding:18px;}
+  .finput,.ftextarea{font-size:14px;padding:11px 14px;}
+
+  .footer-top{gap:28px;}
+  .flogo{font-size:24px;}
+  .back-top{bottom:16px;right:16px;width:40px;height:40px;font-size:15px;}
+}
+
+/* TRÈS PETIT — max 360px */
+@media(max-width:360px){
+  section,#promos,#catalogue,#about,#testi,#contact{padding:44px 4%;}
+  nav{padding:0 4%;}
+  .logo{font-size:21px;letter-spacing:3px;}
+  .hero-h1{font-size:42px;}
+  .s-title{font-size:28px;}
+  .promo-big-title{font-size:22px;}
+  .promo-big-new{font-size:28px;}
+  .cform{padding:14px;}
+  .flogo{font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">BORIS <em>IBOX</em></div>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#hero" onclick="closeNav()">Accueil</a></li>
+    <li><a href="#promos" onclick="closeNav()">Promos</a></li>
+    <li><a href="#catalogue" onclick="closeNav()">Catalogue</a></li>
+    <li><a href="#about" onclick="closeNav()">À propos</a></li>
+    <li><a href="#testi" onclick="closeNav()">Avis</a></li>
+    <li><a href="#contact" class="nav-btn" onclick="closeNav()">Commander</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Yaoundé · Accessoires Premium</div>
+    <h1 class="hero-h1">
+      <span class="line-red">TECH</span><br>
+      <span>STYLE</span><br>
+      <span class="line-fill">PRESTIGE</span>
+    </h1>
+    <p class="hero-para">Téléphones, montres connectées, sacs de marque, drones et chaussures. Boris IBox — la boutique de référence au cœur de votre quartier.</p>
+    <div class="hero-actions">
+      <a href="#catalogue" class="btn-red">Explorer le catalogue →</a>
+      <a href="https://wa.me/237600000000" class="btn-ghost" target="_blank">💬 Commander via WhatsApp</a>
+    </div>
+    <div class="hero-kpis">
+      <div><div class="kpi-num">500+</div><div class="kpi-lbl">Produits</div></div>
+      <div><div class="kpi-num">2K+</div><div class="kpi-lbl">Clients satisfaits</div></div>
+      <div><div class="kpi-num">5★</div><div class="kpi-lbl">Note moyenne</div></div>
+      <div><div class="kpi-num">5+</div><div class="kpi-lbl">Années d'exp.</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="carousel-wrap" id="carouselWrap">
+
+      <!-- Barre de progression -->
+      <div class="c-progress" id="cProgress"></div>
+
+      <!-- Slides -->
+      <div class="carousel-track" id="cTrack"></div>
+
+      <!-- Flèches -->
+      <button class="c-arrow left" onclick="cMove(-1)" aria-label="Précédent">&#8592;</button>
+      <button class="c-arrow right" onclick="cMove(1)" aria-label="Suivant">&#8594;</button>
+
+      <!-- Pause hint -->
+      <div class="c-paused-hint" id="cPausedHint">⏸ Pause</div>
+
+      <!-- Dots -->
+      <div class="c-dots" id="cDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="ticker"></div>
+</div>
+
+<!-- PROMOS -->
+<section id="promos">
+  <div class="section-head reveal">
+    <div class="s-tag">Offres Spéciales</div>
+    <div class="s-title">PROMOTIONS <em>DU MOMENT</em></div>
+    <p class="s-sub">Des prix imbattables sur une sélection de produits. Profitez-en avant la fin du stock.</p>
+  </div>
+  <div class="promos-grid reveal">
+    <div class="promo-big">
+      <img class="promo-big-img" src="https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=800&q=80" alt="iPhone 15 Pro Max">
+      <div class="promo-big-body">
+        <div>
+          <div class="promo-big-label">Téléphone du mois</div>
+          <div class="promo-big-title">iPhone 15 Pro Max</div>
+        </div>
+        <div>
+          <div class="promo-big-old">850 000 XAF</div>
+          <div class="promo-big-new">722 500 XAF</div>
+          <div class="promo-badge">🔥 -15% — Jusqu'au 31 Mai</div>
+        </div>
+      </div>
+    </div>
+    <div class="promos-small">
+      <div class="promo-small">
+        <img class="ps-img" src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=200&q=80" alt="Galaxy Watch 6">
+        <div class="ps-body">
+          <div class="ps-label">Montre connectée</div>
+          <div class="ps-name">Galaxy Watch 6</div>
+          <div class="ps-prices">
+            <span class="ps-old">180 000</span>
+            <span class="ps-new">153 000 XAF</span>
+          </div>
+        </div>
+        <div class="ps-badge">-15%</div>
+      </div>
+      <div class="promo-small">
+        <img class="ps-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80" alt="Adidas Ultraboost">
+        <div class="ps-body">
+          <div class="ps-label">Chaussures</div>
+          <div class="ps-name">Adidas Ultraboost 23</div>
+          <div class="ps-prices">
+            <span class="ps-old">82 000</span>
+            <span class="ps-new">69 700 XAF</span>
+          </div>
+        </div>
+        <div class="ps-badge">-15%</div>
+      </div>
+      <div class="promo-small">
+        <img class="ps-img" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=200&q=80" alt="Nike Backpack">
+        <div class="ps-body">
+          <div class="ps-label">Sac à dos</div>
+          <div class="ps-name">Nike Air Backpack</div>
+          <div class="ps-prices">
+            <span class="ps-old">45 000</span>
+            <span class="ps-new">38 250 XAF</span>
+          </div>
+        </div>
+        <div class="ps-badge">-15%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue">
+  <div class="cat-controls reveal">
+    <div>
+      <div class="s-tag">Nos Produits</div>
+      <div class="s-title">CATALOGUE <em>COMPLET</em></div>
+    </div>
+    <div class="filters">
+      <button class="filter-btn on" onclick="doFilter('all',this)">Tout</button>
+      <button class="filter-btn" onclick="doFilter('phone',this)">📱 Téléphones</button>
+      <button class="filter-btn" onclick="doFilter('watch',this)">⌚ Montres</button>
+      <button class="filter-btn" onclick="doFilter('bag',this)">🎒 Sacs</button>
+      <button class="filter-btn" onclick="doFilter('drone',this)">🚁 Drones</button>
+      <button class="filter-btn" onclick="doFilter('shoe',this)">👟 Chaussures</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-visual reveal">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80" alt="Boris IBox boutique">
+      </div>
+      <div class="about-float">
+        <div class="af-num">5+</div>
+        <div class="af-txt">Années<br>d'expérience</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="s-tag">Notre Histoire</div>
+      <div class="s-title">POURQUOI <em>BORIS IBOX</em> ?</div>
+      <div class="about-line"></div>
+      <p class="about-text">Née du besoin de rendre les accessoires tech et lifestyle accessibles à tous à Yaoundé, Boris IBox s'est imposée comme la boutique incontournable du quartier. Qualité premium, prix justes, service humain — telle est notre promesse depuis le premier jour.</p>
+      <div class="feats">
+        <div class="feat">
+          <div class="feat-icon">✅</div>
+          <div>
+            <div class="feat-title">Produits 100% Authentiques</div>
+            <div class="feat-desc">Chaque produit est certifié original. Aucun compromis sur la qualité ni sur votre confiance.</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">🚚</div>
+          <div>
+            <div class="feat-title">Livraison dans tout Yaoundé</div>
+            <div class="feat-desc">Commandez via WhatsApp, recevez à domicile rapidement et en toute sécurité.</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">🛡️</div>
+          <div>
+            <div class="feat-title">Garantie & Service Après-Vente</div>
+            <div class="feat-desc">Tous nos produits électroniques sont garantis. Notre équipe est disponible pour vous accompagner.</div>
+          </div>
+        </div>
+        <div class="feat">
+          <div class="feat-icon">💳</div>
+          <div>
+            <div class="feat-title">Paiement Mobile Money Accepté</div>
+            <div class="feat-desc">MTN Mobile Money et Orange Money acceptés. Simple, rapide et sécurisé.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testi">
+  <div class="section-head reveal">
+    <div class="s-tag">Ce qu'ils disent</div>
+    <div class="s-title">AVIS DE NOS <em>CLIENTS</em></div>
+  </div>
+  <div class="testi-grid">
+    <div class="tcard reveal">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">J'ai acheté mon iPhone 15 ici et franchement je suis bluffé. Prix correct, téléphone original, livré le jour même. Je recommande vivement Boris IBox à tout mon entourage.</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">FK</div>
+        <div><div class="tcard-name">Fabrice Kamga</div><div class="tcard-loc">Yaoundé, Bastos</div></div>
+      </div>
+    </div>
+    <div class="tcard reveal">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">Le drone DJI que j'ai commandé est arrivé parfaitement emballé. Le patron est serviable et m'a même fait une démonstration. Boutique sérieuse, je reviens sans hésiter.</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">MN</div>
+        <div><div class="tcard-name">Martine Ngo</div><div class="tcard-loc">Yaoundé, Mvan</div></div>
+      </div>
+    </div>
+    <div class="tcard reveal">
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-text">Meilleure boutique du quartier pour les accessoires tech. Les prix sont justes, les produits sont vrais et le service client est excellent. Ma Galaxy Watch fonctionne parfaitement !</p>
+      <div class="tcard-author">
+        <div class="tcard-avatar">PA</div>
+        <div><div class="tcard-name">Patrick Ateba</div><div class="tcard-loc">Yaoundé, Nsam</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-head reveal">
+    <div class="s-tag">Nous Contacter</div>
+    <div class="s-title">PARLONS <em>AFFAIRES</em></div>
+    <p class="s-sub">Un produit en tête ? Une question ? On vous répond rapidement.</p>
+  </div>
+  <div class="contact-wrap">
+    <div class="reveal">
+      <div class="cinfo">
+        <div class="ci">
+          <div class="ci-icon">📍</div>
+          <div><div class="ci-title">Adresse</div><div class="ci-val">Carrefour Mvog-Ada, Yaoundé, Cameroun</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">📞</div>
+          <div><div class="ci-title">Téléphone</div><div class="ci-val">+237 6XX XXX XXX</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">🕐</div>
+          <div><div class="ci-title">Horaires d'ouverture</div><div class="ci-val">Lun – Sam : 8h00 → 20h00</div></div>
+        </div>
+        <div class="ci">
+          <div class="ci-icon">💳</div>
+          <div><div class="ci-title">Paiement accepté</div><div class="ci-val">Cash · MTN MoMo · Orange Money</div></div>
+        </div>
+      </div>
+      <a href="https://wa.me/237600000000" class="wa-btn" target="_blank" style="margin-top:32px">
+        💬 Commander via WhatsApp
+      </a>
+    </div>
+    <div class="cform reveal">
+      <div class="form-row">
+        <div class="fg"><label class="flabel">Nom complet</label><input class="finput" type="text" placeholder="Jean Dupont"></div>
+        <div class="fg"><label class="flabel">Téléphone</label><input class="finput" type="tel" placeholder="+237 6XX XXX XXX"></div>
+      </div>
+      <div class="fg"><label class="flabel">Produit souhaité</label><input class="finput" type="text" placeholder="Ex: iPhone 15, DJI Mini..."></div>
+      <div class="fg"><label class="flabel">Message</label><textarea class="ftextarea" placeholder="Votre message ou commande..."></textarea></div>
+      <button class="fsend" onclick="sendForm(this)">Envoyer la demande →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="flogo">BORIS <em>IBOX</em></div>
+      <p class="fdesc">Votre boutique premium d'accessoires tech et lifestyle à Yaoundé. Qualité, confiance et style depuis plus de 5 ans.</p>
+      <div class="socials">
+        <a class="soc" href="#" title="Facebook">📘</a>
+        <a class="soc" href="#" title="Instagram">📸</a>
+        <a class="soc" href="#" title="TikTok">🎵</a>
+        <a class="soc" href="https://wa.me/237600000000" title="WhatsApp" target="_blank">💬</a>
+      </div>
+    </div>
+    <div>
+      <div class="fcol-title">Navigation</div>
+      <ul class="flinks">
+        <li><a href="#hero">Accueil</a></li>
+        <li><a href="#promos">Promotions</a></li>
+        <li><a href="#catalogue">Catalogue</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#testi">Avis clients</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fcol-title">Produits</div>
+      <ul class="flinks">
+        <li><a href="#">Téléphones</a></li>
+        <li><a href="#">Montres connectées</a></li>
+        <li><a href="#">Sacs de marque</a></li>
+        <li><a href="#">Drones</a></li>
+        <li><a href="#">Chaussures</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="fcol-title">Infos</div>
+      <ul class="flinks">
+        <li><a href="#">Livraison</a></li>
+        <li><a href="#">Garantie</a></li>
+        <li><a href="#">Paiement Mobile Money</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bot">
+    <div class="copy">© 2025 <em>Boris IBox</em> · Tous droits réservés · Yaoundé, Cameroun</div>
+    <div class="copy">Fait avec ❤️ à <em>Yaoundé</em></div>
+  </div>
+</footer>
+
+<button class="back-top" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ── NAV MOBILE ── */
+function toggleNav(){
+  document.getElementById('navMenu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+function closeNav(){
+  document.getElementById('navMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+document.addEventListener('click',function(e){
+  if(!document.querySelector('nav').contains(e.target)) closeNav();
+});
+
+/* ══════════════════════════════════════
+   CAROUSEL HERO
+══════════════════════════════════════ */
+const slides = [
+  {
+    img:'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=800&q=85',
+    cat:'Téléphone',name:'iPhone 15 Pro Max',sub:'256GB · Titanium Black',
+    price:'722 500',badge:'🔥 -15%',waName:'iPhone 15 Pro Max',waPrice:'722 500'
+  },
+  {
+    img:'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=800&q=85',
+    cat:'Téléphone',name:'Samsung Galaxy S24 Ultra',sub:'256GB · Phantom Black',
+    price:'720 000',badge:null,waName:'Samsung Galaxy S24 Ultra',waPrice:'720 000'
+  },
+  {
+    img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&q=85',
+    cat:'Drone',name:'DJI Mini 4 Pro',sub:'4K · GPS · 34 min d\'autonomie',
+    price:'442 000',badge:'Exclusif',waName:'DJI Mini 4 Pro',waPrice:'442 000'
+  },
+  {
+    img:'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=800&q=85',
+    cat:'Montre connectée',name:'Apple Watch Series 9',sub:'GPS · 45mm · Always-On',
+    price:'280 000',badge:null,waName:'Apple Watch Series 9',waPrice:'280 000'
+  },
+  {
+    img:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=85',
+    cat:'Chaussures',name:'Adidas Ultraboost 23',sub:'Running · Tailles 40–46',
+    price:'69 700',badge:'🔥 -15%',waName:'Adidas Ultraboost 23',waPrice:'69 700'
+  },
+  {
+    img:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=85',
+    cat:'Sac & Bagage',name:'Nike Air Max Backpack',sub:'30L · Noir · Waterproof',
+    price:'38 250',badge:null,waName:'Nike Air Max Backpack',waPrice:'38 250'
+  },
+];
+
+let cCurrent = 0;
+let cTimer = null;
+let cInterval = null;
+let cPaused = false;
+const DURATION = 4500; // ms par slide
+let cElapsed = 0;
+let cTickStart = null;
+
+const track   = document.getElementById('cTrack');
+const dotsEl  = document.getElementById('cDots');
+const progEl  = document.getElementById('cProgress');
+const hintEl  = document.getElementById('cPausedHint');
+const wrap    = document.getElementById('carouselWrap');
+
+/* Construire les slides */
+slides.forEach((s,i)=>{
+  const el = document.createElement('div');
+  el.className = 'c-slide' + (i===0?' active':'');
+  el.dataset.i = i;
+  el.innerHTML = `
+    <img src="${s.img}" alt="${s.name}" loading="${i<2?'eager':'lazy'}">
+    <div class="c-slide-overlay"></div>
+    <div class="c-slide-info">
+      ${s.badge?`<div class="c-slide-badge">${s.badge}</div>`:''}
+      <div class="c-slide-cat">${s.cat}</div>
+      <div class="c-slide-name">${s.name}</div>
+      <div class="c-slide-sub">${s.sub}</div>
+      <div class="c-slide-bottom">
+        <div class="c-slide-price"><sup>XAF </sup>${s.price}</div>
+        <button class="c-slide-btn" onclick="cOrder(${i})">Commander →</button>
+      </div>
+    </div>`;
+  track.appendChild(el);
+});
+
+/* Construire dots */
+slides.forEach((_,i)=>{
+  const d = document.createElement('div');
+  d.className = 'c-dot' + (i===0?' on':'');
+  d.onclick = ()=>cGoto(i,true);
+  dotsEl.appendChild(d);
+});
+
+/* Construire barres de progression */
+slides.forEach((_,i)=>{
+  const b = document.createElement('div');
+  b.className = 'c-prog-bar';
+  b.onclick = ()=>cGoto(i,true);
+  const f = document.createElement('div');
+  f.className = 'c-prog-fill';
+  b.appendChild(f);
+  progEl.appendChild(b);
+});
+
+function cGetSlides(){ return track.querySelectorAll('.c-slide'); }
+function cGetDots()  { return dotsEl.querySelectorAll('.c-dot'); }
+function cGetBars()  { return progEl.querySelectorAll('.c-prog-bar'); }
+
+function cActivate(idx){
+  const sl = cGetSlides();
+  const dots = cGetDots();
+  const bars = cGetBars();
+
+  /* Marquer ancien comme prev brièvement */
+  sl[cCurrent].classList.remove('active');
+  sl[cCurrent].classList.add('prev');
+  setTimeout(()=>sl[cCurrent]&&sl[cCurrent].classList.remove('prev'),600);
+
+  cCurrent = (idx + slides.length) % slides.length;
+
+  sl[cCurrent].classList.add('active');
+
+  /* Dots */
+  dots.forEach((d,i)=>d.classList.toggle('on',i===cCurrent));
+
+  /* Barres de progression */
+  bars.forEach((b,i)=>{
+    b.classList.remove('active','done');
+    b.querySelector('.c-prog-fill').style.width = i < cCurrent ? '100%' : '0%';
+    if(i === cCurrent) b.classList.add('active');
+    if(i < cCurrent)  b.classList.add('done');
+  });
+}
+
+/* Tick de progression */
+function cStartTick(){
+  cTickStart = performance.now() - cElapsed;
+  const bars = cGetBars();
+  const fill = bars[cCurrent]?.querySelector('.c-prog-fill');
+
+  function tick(now){
+    if(cPaused) return;
+    cElapsed = now - cTickStart;
+    const pct = Math.min(100, (cElapsed / DURATION)*100);
+    if(fill) fill.style.width = pct + '%';
+    if(cElapsed >= DURATION){
+      cElapsed = 0;
+      cActivate(cCurrent + 1);
+      cStartTick();
+      return;
+    }
+    cInterval = requestAnimationFrame(tick);
+  }
+  cancelAnimationFrame(cInterval);
+  cInterval = requestAnimationFrame(tick);
+}
+
+function cPause(){
+  cPaused = true;
+  cancelAnimationFrame(cInterval);
+  hintEl.style.opacity='1';
+}
+function cResume(){
+  cPaused = false;
+  hintEl.style.opacity='0';
+  cStartTick();
+}
+
+/* Pause au hover */
+wrap.addEventListener('mouseenter', cPause);
+wrap.addEventListener('mouseleave', cResume);
+
+/* Touch swipe */
+let tX0 = null;
+track.addEventListener('touchstart',e=>{ tX0 = e.touches[0].clientX; },{passive:true});
+track.addEventListener('touchend',e=>{
+  if(tX0 === null) return;
+  const dx = e.changedTouches[0].clientX - tX0;
+  if(Math.abs(dx) > 40){ cMove(dx < 0 ? 1 : -1); }
+  tX0 = null;
+},{passive:true});
+
+function cMove(dir){
+  cElapsed = 0;
+  cActivate(cCurrent + dir);
+  if(!cPaused){ cancelAnimationFrame(cInterval); cStartTick(); }
+}
+
+function cGoto(idx, manual=false){
+  cElapsed = 0;
+  cActivate(idx);
+  if(manual && !cPaused){ cancelAnimationFrame(cInterval); cStartTick(); }
+}
+
+function cOrder(idx){
+  const s = slides[idx];
+  const msg = encodeURIComponent(`Bonjour Boris IBox, je souhaite commander : ${s.waName} — Prix affiché : ${s.waPrice} XAF. Pouvez-vous confirmer la disponibilité ?`);
+  window.open(`https://wa.me/237600000000?text=${msg}`,'_blank');
+}
+
+/* Démarrage */
+cStartTick();
+
+/* ── PRODUITS catalogue ── */
+const products = [
+  {cat:'phone',name:'iPhone 15 Pro Max',price:'850 000',badge:'Promo',
+   img:'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=500&q=80',
+   rating:'4.9',rv:124,sub:'256GB · Titanium'},
+  {cat:'phone',name:'Samsung Galaxy S24 Ultra',price:'720 000',badge:null,
+   img:'https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=500&q=80',
+   rating:'4.8',rv:89,sub:'256GB · Phantom'},
+  {cat:'phone',name:'Tecno Phantom X2 Pro',price:'320 000',badge:'Populaire',
+   img:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80',
+   rating:'4.6',rv:201,sub:'12GB RAM'},
+  {cat:'watch',name:'Apple Watch Series 9',price:'280 000',badge:null,
+   img:'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500&q=80',
+   rating:'4.7',rv:56,sub:'GPS · 45mm'},
+  {cat:'watch',name:'Samsung Galaxy Watch 6',price:'180 000',badge:'Promo',
+   img:'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=500&q=80',
+   rating:'4.6',rv:43,sub:'LTE · 44mm'},
+  {cat:'watch',name:'Huawei Watch GT 4',price:'95 000',badge:null,
+   img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80',
+   rating:'4.5',rv:74,sub:'Sport Edition'},
+  {cat:'bag',name:'Nike Air Max Backpack',price:'45 000',badge:null,
+   img:'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80',
+   rating:'4.8',rv:67,sub:'30L · Noir'},
+  {cat:'bag',name:'Adidas Originals Sac',price:'38 000',badge:null,
+   img:'https://images.unsplash.com/photo-1622560480605-d83c661c7ec3?w=500&q=80',
+   rating:'4.7',rv:52,sub:'Classic Series'},
+  {cat:'drone',name:'DJI Mini 4 Pro',price:'520 000',badge:'Exclusif',
+   img:'https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500&q=80',
+   rating:'4.9',rv:31,sub:'4K · GPS · 34min'},
+  {cat:'drone',name:'DJI Air 3',price:'780 000',badge:'Nouveau',
+   img:'https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=500&q=80',
+   rating:'4.9',rv:18,sub:'4K HDR · Dual Cam'},
+  {cat:'shoe',name:'Nike Air Max 270',price:'75 000',badge:null,
+   img:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80',
+   rating:'4.8',rv:88,sub:'Taille 39-46'},
+  {cat:'shoe',name:'Adidas Ultraboost 23',price:'82 000',badge:'Promo',
+   img:'https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?w=500&q=80',
+   rating:'4.9',rv:110,sub:'Running · Taille 40-46'},
+];
+const catName={phone:'Téléphone',watch:'Montre connectée',bag:'Sac & Bagage',drone:'Drone',shoe:'Chaussure'};
+
+function renderGrid(list){
+  document.getElementById('grid').innerHTML=list.map(p=>`
+    <div class="pcard reveal">
+      <div class="pcard-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        <div class="pcard-overlay"></div>
+        ${p.badge?`<div class="pcard-tag">${p.badge}</div>`:''}
+      </div>
+      <div class="pcard-body">
+        <div class="pcard-cat">${catName[p.cat]||p.cat}</div>
+        <div class="pcard-name">${p.name}</div>
+        <div class="pcard-bottom">
+          <div class="pcard-price"><sup>XAF </sup>${p.price}</div>
+          <button class="btn-buy" onclick="buyNow('${p.name}','${p.price}')">Commander</button>
+        </div>
+        <div class="pcard-rating"><span class="s">★</span> ${p.rating} · (${p.rv} avis)</div>
+      </div>
+    </div>
+  `).join('');
+  revealInit();
+}
+
+function doFilter(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderGrid(cat==='all'?products:products.filter(p=>p.cat===cat));
+}
+
+function buyNow(name,price){
+  const msg=encodeURIComponent(`Bonjour Boris IBox, je souhaite commander : ${name} — Prix affiché : ${price} XAF. Pouvez-vous confirmer la disponibilité ?`);
+  window.open(`https://wa.me/237600000000?text=${msg}`,'_blank');
+}
+
+function sendForm(btn){
+  btn.textContent='✓ Message envoyé !';btn.style.background='#27AE60';
+  setTimeout(()=>{btn.textContent='Envoyer la demande →';btn.style.background='';},3000);
+}
+
+/* ── TICKER ── */
+const items=['🔥 iPhone 15 Pro — -15%','⌚ Galaxy Watch 6 en stock','🚁 DJI Mini 4 Pro disponible','🎒 Sacs Nike & Adidas originaux','💳 Paiement MTN MoMo accepté','👟 Adidas Ultraboost — -15%','📱 Tecno Phantom X2 Pro','🛡️ Garantie sur tous les appareils'];
+const t=document.getElementById('ticker');
+t.innerHTML=[...items,...items].map(i=>`<div class="ticker-item">${i}</div>`).join('');
+
+/* ── REVEAL ── */
+function revealInit(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+  },{threshold:.08});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+
+/* ── BACK TO TOP ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('show',scrollY>500);
+});
+
+renderGrid(products);
+revealInit();
+</script>
+</body>
+</html>
